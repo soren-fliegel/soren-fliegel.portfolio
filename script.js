@@ -4,7 +4,7 @@ const sound = document.getElementById("sound");
 const btn = document.getElementById("search-btn");
 btn.addEventListener("click", () => {
     let inpWord = document.getElementById("inp-word").value;
-    fetch(`${url}${inpWord}`)
+    fetch('url+{inpWord}')
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -28,7 +28,7 @@ btn.addEventListener("click", () => {
             sound.setAttribute("src", `https:${data[0].phonetics[0].audio}`);
         })
         .catch(() => {
-            result.innerHTML = `<h3 class="error">${inpWord}</h3>`;
+            result.innerHTML = `<h3 class="error">Couldn't Find Word</h3>`;
         });
 });
 function playSound() {
