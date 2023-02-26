@@ -4,7 +4,7 @@ const sound = document.getElementById("sound");
 const btn = document.getElementById("search-btn");
 btn.addEventListener("click", () => {
     let inpWord = document.getElementById("inp-word").value;
-    fetch('hello')
+    fetch(`${url}${inpWord}`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
